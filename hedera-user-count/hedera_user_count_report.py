@@ -491,7 +491,6 @@ def write_csv(rows, output_path):
 def print_summary(rows, total_matching_logs, output_path, skip_mongo=False):
     total_unique_users = len(rows)
     users_with_identity = sum(1 for row in rows if row["has_identity_email_phone"] == "yes")
-    users_without_identity = total_unique_users - users_with_identity
     mongo_user_matches = sum(1 for row in rows if row["mongo_user_found"] == "yes")
     mongo_earning_matches = sum(1 for row in rows if row["mongo_earnings_found"] == "yes")
     total_transactions = sum(int(row["hedera_transaction_count"] or 0) for row in rows)
@@ -503,7 +502,6 @@ def print_summary(rows, total_matching_logs, output_path, skip_mongo=False):
         print("Identity/email/phone counts: skipped because --skip-mongo was used")
     else:
         print(f"Users with identity/email/phone: {users_with_identity}")
-        print(f"Users without identity/email/phone: {users_without_identity}")
     print(f"Matching Hedera log entries: {total_matching_logs}")
     print(f"Grouped Hedera transactions: {total_transactions}")
     if not skip_mongo:

@@ -4,6 +4,19 @@ This document explains how to run `hedera-user-count/hedera_user_count_report.py
 
 The script generates a CSV report and prints the overall Hedera user count.
 
+## Hedera Contract Details
+
+The report is generated from Hedera Mirror Node logs for this contract and event:
+
+| Field | Value |
+|---|---|
+| Network | `mainnet` |
+| Contract ID | `0.0.10614436` |
+| Contract explorer | `https://hashscan.io/mainnet/contract/0.0.10614436` |
+| Mirror Node logs API | `https://mainnet.mirrornode.hedera.com/api/v1/contracts/0.0.10614436/results/logs` |
+| Event decoded by script | `PointsAwardedToDID(string,uint256)` |
+| Event topic | `0xe1857f8a840b24b3ff4964259f80839cb5de7ce8afef0d8b8c95bfeac85eee4e` |
+
 ## What The Script Does
 
 The script reads Hedera Mirror Node contract logs and aggregates users by unique DID.
@@ -20,7 +33,6 @@ The script prints these counts:
 |---|---|
 | `Total unique Hedera users` | Unique `did_id` values found in matching Hedera logs |
 | `Users with identity/email/phone` | Internal-only count. Unique DIDs where MongoDB has at least one of `user_id`, `email`, or `phone` |
-| `Users without identity/email/phone` | Internal-only count. Unique DIDs where MongoDB has none of `user_id`, `email`, or `phone` |
 
 Duplicates are eliminated by DID.
 
@@ -229,7 +241,6 @@ Hedera user count report generated
 Output: reports/hedera_user_count_report.csv
 Total unique Hedera users: 959
 Users with identity/email/phone: 278
-Users without identity/email/phone: 681
 Matching Hedera log entries: 1794
 Grouped Hedera transactions: 1794
 Mongo users matched: 278
