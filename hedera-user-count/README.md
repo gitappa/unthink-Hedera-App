@@ -4,6 +4,19 @@ This document explains how to run `hedera-user-count/hedera_user_count_report.py
 
 The script generates a CSV report and prints the overall Hedera user count.
 
+## Hedera Contract Details
+
+The report is generated from Hedera Mirror Node logs for this contract and event:
+
+| Field | Value |
+|---|---|
+| Network | `mainnet` |
+| Contract ID | `0.0.10614436` |
+| Contract explorer | `https://hashscan.io/mainnet/contract/0.0.10614436` |
+| Mirror Node logs API | `https://mainnet.mirrornode.hedera.com/api/v1/contracts/0.0.10614436/results/logs` |
+| Event decoded by script | `PointsAwardedToDID(string,uint256)` |
+| Event topic | `0xe1857f8a840b24b3ff4964259f80839cb5de7ce8afef0d8b8c95bfeac85eee4e` |
+
 ## What The Script Does
 
 The script reads Hedera Mirror Node contract logs and aggregates users by unique DID.
