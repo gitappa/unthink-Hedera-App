@@ -20,7 +20,6 @@ The script prints these counts:
 |---|---|
 | `Total unique Hedera users` | Unique `did_id` values found in matching Hedera logs |
 | `Users with identity/email/phone` | Internal-only count. Unique DIDs where MongoDB has at least one of `user_id`, `email`, or `phone` |
-| `Users without identity/email/phone` | Internal-only count. Unique DIDs where MongoDB has none of `user_id`, `email`, or `phone` |
 
 Duplicates are eliminated by DID.
 
@@ -229,7 +228,6 @@ Hedera user count report generated
 Output: reports/hedera_user_count_report.csv
 Total unique Hedera users: 959
 Users with identity/email/phone: 278
-Users without identity/email/phone: 681
 Matching Hedera log entries: 1794
 Grouped Hedera transactions: 1794
 Mongo users matched: 278
