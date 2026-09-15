@@ -46,8 +46,6 @@ https://mainnet.mirrornode.hedera.com
 
 ## External Team Run Instructions
 
-Use this flow when an external team wants to verify that the Hedera user count increases after participating in an event.
-
 This mode reads only Hedera Mirror Node logs. It does not require MongoDB access, VM tunneling, or internal credentials.
 
 1. Go to the project root:
@@ -96,8 +94,6 @@ Grouped Hedera transactions: 1794
 ## Internal MongoDB Enrichment
 
 Use this section only for internal reporting when identity/email/phone split is required.
-
-External teams do not need MongoDB access for Hedera user count validation.
 
 ## MongoDB Connection Options
 
